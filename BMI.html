@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <link rel="stylesheet" href="BMI.css">
+</head>
+<body>
+    <style>
+        .container{
+            align-self: center;
+        }
+    </style>
+    <div class="container">
+        <h1>BMI CALCULATOR</h1>
+            <div id="age">
+                <label>Age:</label>
+                <input type="number" name="" id="age" onchange="Age1()">
+                <span>ages:2-120</span>
+            </div>
+            <div class="gender">
+                <label>Gender:</label>
+            <select name="Gender">
+                <option>male</option>
+                <option>Female</option>
+                <option>others</option>
+            </select>
+            </div>
+            <div class="height">
+                <lable>Height:</lable>
+                <input type="text" name="" id="height" placeholder="cm" class="height-control">
+            </div>
+            <div class="weight">
+                <lable>Weight:</lable>
+                <input type="text" name="" id="weight" placeholder="kg"   class="weight-control">
+            </div>
+            <div class="calculate">
+                <div>RESULT</div>
+                <p id="result">BMI VAlue:</p>
+                <button id="btn" onClick="BMI()">calculate</button>
+                <button >clear</button>
+            </div>
+    </div>
+    <script type="text/javascript">
+        function BMI(){
+            var height=document.getElementById('height').value;
+            var weight=document.getElementById('weight').value;
+            var newBMIvalue=weight/(height/100*height/100);
+            var bmio=(newBMIvalue.toFixed(2))
+        document.getElementById("result").innerHTML="BMI Value"+bmio+ "kg/m*2"
+        }
+        function Age1(){
+            let age=0
+            if(age>120){
+                alert("please provide valid age")
+            }
+            document.getElementById("age")
+        }
+    </script>
+    
+</body>
+</html>
